@@ -17,14 +17,14 @@ public:
         snapshotArray.resize(length);
         for (int i = 0; i < length; ++i) {
             snapshotArray[i] = vector<Data>();
-            snapshotArray[i].push_back(Data(snapID, 0));
+            snapshotArray[i].emplace_back(snapID, 0);
         }
     }
 
     void set(int index, int value) {
         size_t lastIndex = snapshotArray[index].size() - 1;
         if (snapshotArray[index][lastIndex].snapID != snapID) {
-            snapshotArray[index].push_back(Data(snapID, value));
+            snapshotArray[index].emplace_back(snapID, value);
         } else {
             snapshotArray[index][lastIndex] = Data(snapID, value);
         }
