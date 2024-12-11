@@ -9,6 +9,7 @@ class SnapshotArray {
         int value{};
         Data(int snapID, int value) : snapID{snapID}, value{value}{}
     };
+
     vector<vector<Data>> snapshotArray;
     int snapID{};
 
